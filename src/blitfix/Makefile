@@ -10,7 +10,7 @@ clean:
 	rm -f *.o $(TARGETS)
 
 $(OUT_DIR)/blitfix.prg: $(VASM) blitfix.s cookie.s
-	$(VASM) $(FLAGS) BLITFIX.S -o $@
+	$(VASM) $(FLAGS) blitfix.s -o $@
 
 $(OUT_DIR)/blitfix.txt: blitfix.txt
 	cp $< $@

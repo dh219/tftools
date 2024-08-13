@@ -151,6 +151,8 @@ int superMain(int argc, char** argv)
 			return 0;
 		}
 	}
+	else
+		printf("Fastram already installed\n");
 
 	// Get TOS info
 	uint16 romVer = 0x206;

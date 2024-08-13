@@ -12,10 +12,14 @@ bool card_DFB1_Setup(struct TFCard* card, struct TFSettings* settings) {
 
 // called at beginning to find + configure card caps
 bool card_DFB1_Find(struct TFCard* card) {
-	if (!testRead16((void*)0x00F20000))
+	int DFBx = 0;
+	if (!testRead16((void*)0x00F1DFB0))
 		return false;
 
-	sprintf(card->name, "DFB1");
+
+	DFBx = safeRead8((void*)0x00F1DFB0);
+
+	sprintf(card->name, "DFB%d", DFBx);
 	card->Setup = card_DFB1_Setup;
 	return true;
 }

@@ -649,7 +649,7 @@ TTRAM_GetInstalled:
 
 
 
-	include "COOKIE.S"
+	include "cookie.s"
 
 
 
